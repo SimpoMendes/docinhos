@@ -1,6 +1,6 @@
 # 🍬 Docinhos de Festa
 
-![Banner do projeto](img/docinho1.jpg)
+
 
 **Docinhos de Festa** é um site moderno, minimalista e responsivo desenvolvido para lojas de docinhos e doces de festa. O projeto combina HTML5, CSS3 e JavaScript para oferecer uma experiência visual agradável e funcional para os usuários, com foco em navegação intuitiva e interação dinâmica.
 
@@ -47,7 +47,7 @@
 │ └─ whatsapp.png
 └─ README.md # Este arquivo
 
-
+![Banner do projeto](img/siteimperio.png)
 
 ---
 
