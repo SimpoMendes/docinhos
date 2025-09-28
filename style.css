@@ -1,252 +1,149 @@
-/* ====================== */
-/*        RESET CSS       */
-/* ====================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Fonte e corpo */
 body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  background: #fff8fb;
+  font-family: "Poppins", sans-serif;
   color: #333;
+  background: #fffdfc;
+  line-height: 1.6;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* ====================== */
-/*         HEADER         */
-/* ====================== */
+/* ----- HEADER ----- */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1.5rem;
-  background: #fff8fb;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   position: fixed;
   width: 100%;
   top: 0;
+  left: 0;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   z-index: 1000;
 }
+header .logo { font-size: 1.5em; font-weight: bold; color: #522418; }
+header nav ul { list-style: none; display: flex; gap: 20px; }
+header nav a { text-decoration: none; color: #333; font-weight: 500; transition: 0.3s; }
+header nav a:hover { color: #522418; }
 
-header .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-}
+/* ----- SLIDER ----- */
+/* espaço para o header fixo */
+.slider { margin-top: 1px; position: relative; overflow: hidden; max-height: 500px; }
 
-header nav ul {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-}
-
-header nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-header nav ul li a:hover {
-  color: #522418;
-}
-
-/* MEDIA QUERY para mobile */
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0.5rem 1rem;
-  }
-
-  header nav ul {
-    flex-direction: column;
-    width: 100%;
-    gap: 0.8rem;
-  }
-
-  header nav ul li a {
-    font-size: 1rem;
-  }
-}
-
-/* ====================== */
-/*         SLIDER         */
-/* ====================== */
-.slider {
-  position: relative;
-  margin-top: 70px; /* altura do header */
-  overflow: hidden;
-  max-height: 400px;
-}
-
+/* contêiner das imagens: altura fixa para o slider */
 .slides {
-  position: relative;
+  position: relative;       /* necessário para posicionar .slide absolute dentro */
+  height: 500px;
 }
 
+/* cada slide fica empilhado (absolute) e ocupa 100% do contêiner */
 .slide {
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
   position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
+  inset: 0;                 /* top:0; right:0; bottom:0; left:0; */
+  opacity: 0;               /* invisível por padrão */
+  transition: opacity 0.6s ease;
+  display: flex;
+  align-items: flex-end;    /* legenda alinhada ao rodapé */
 }
 
+/* o slide visível */
 .slide.active {
   opacity: 1;
-  position: relative;
+  z-index: 2;
 }
 
+/* imagem cobre todo o slide */
 .slide img {
   width: 100%;
-  height: 400px;
+  height: 80%;
   object-fit: cover;
+  display: block;
 }
 
+/* legenda sobre a imagem */
 .caption {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: #fff;
-  font-size: 1.5rem;
-  background: rgba(0,0,0,0.4);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.8);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1.2em;
+  color: #392722;
+  z-index: 3;
 }
 
-/* Botões do slider */
+/* botões de navegação */
+.navigation { position: absolute; inset: 0; pointer-events: none; }
 .navigation button {
+  pointer-events: auto;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.7);
-  border: none;
-  font-size: 2rem;
-  padding: 0 0.5rem;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-.navigation button:hover {
-  background: #522418;
-  color: #fff;
-}
-
-.navigation .prev { left: 10px; }
-.navigation .next { right: 10px; }
-
-/* ====================== */
-/*        PRODUTOS        */
-/* ====================== */
-.produtos {
-  padding: 4rem 1rem 2rem;
-  text-align: center;
-}
-
-.produtos h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.produtos .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  background: white;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h3 {
-  margin: 0.5rem 0;
-}
-
-.card p {
-  font-size: 0.9rem;
-  color: #555;
-}
-
-/* ====================== */
-/*      FORMULÁRIO        */
-/* ====================== */
-.form-contato {
-  max-width: 500px;
-  margin: 0 auto 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.form-contato input,
-.form-contato textarea {
-  width: 100%;
-  padding: 0.9rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-  outline: none;
-  transition: border 0.3s;
-}
-
-.form-contato input:focus,
-.form-contato textarea:focus {
-  border-color: #522418;
-}
-
-.form-contato button {
-  padding: 1rem;
-  background: #522418;
+  font-size: 1.6em;
+  background: rgba(0,0,0,0.35);
   color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 50%;
   cursor: pointer;
-  transition: background 0.3s;
+  user-select: none;
+  z-index: 4;
+}
+.navigation .prev { left: 20px; }
+.navigation .next { right: 20px; }
+.navigation button:focus { outline: 2px solid #fff; }
+
+/* ----- PRODUTOS ----- */
+.produtos { text-align: center; padding: 60px 20px; }
+.produtos h2 { font-size: 2em; margin-bottom: 30px; color: #522418; }
+
+/* Grid responsivo */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
 }
 
-.form-contato button:hover {
-  background: #522418;
+/* Card de produto */
+.card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
 }
+.card img { width: 100%; height: 200px; object-fit: cover; }
+.card h3 { margin: 15px 0; color: #522418; }
+.card p { padding: 0 15px 20px; }
+.card:hover { transform: scale(1.05); }
 
-/* ====================== */
-/*         RODAPÉ         */
-/* ====================== */
+/* ----- FOOTER & FORM ----- */
 footer {
-  background: #fff8fb;
-  padding: 3rem 1.5rem;
+  background: #522418;
+  color: white;
   text-align: center;
-  font-size: 0.9rem;
+  padding: 40px 20px;
+  margin-top: 40px;
 }
+footer h2 { margin-bottom: 20px; }
 
-footer h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: #333;
+.form-contato {
+  display: flex; flex-direction: column;
+  max-width: 400px; margin: 0 auto 30px; gap: 15px;
 }
-
-footer p {
-  margin: 0.3rem 0;
+.form-contato input,
+.form-contato textarea {
+  padding: 10px; border-radius: 8px; border: none; font-size: 1em;
 }
+.form-contato button {
+  background: white; color: #522418; border: none; padding: 12px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: 0.3s;
+}
+.form-contato button:hover { background: #f8d7da; }
 
-/* Redes sociais */
 .redes-sociais {
   margin: 1.5rem 0;
   display: flex;
@@ -265,35 +162,11 @@ footer p {
   filter: brightness(1.2);
 }
 
-/* ====================== */
-/*       MEDIA QUERIES    */
-/* ====================== */
-@media (max-width: 768px) {
-  .caption {
-    font-size: 1.2rem;
-    bottom: 10px;
-    left: 10px;
-  }
 
-  .slider img {
-    height: 300px;
-  }
-
-  .produtos h2 {
-    font-size: 1.5rem;
-  }
-
-  .form-contato button {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .slider img {
-    height: 250px;
-  }
-
-  .produtos .grid {
-    gap: 1rem;
-  }
+/* Responsividade: slider menor em telas pequenas */
+@media (max-width: 600px) {
+  .slides { height: 300px; }
+  .slide img { height: 300px; }
+  .caption { font-size: 1em; padding: 8px 12px; }
+  header .logo { font-size: 1em; font-weight: bold; color: #522418; }
 }
