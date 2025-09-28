@@ -1,0 +1,171 @@
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Fonte e corpo */
+body {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  background: #fffdfc;
+  line-height: 1.6;
+}
+
+/* ----- HEADER ----- */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+header .logo { font-size: 1.5em; font-weight: bold; color: #522418; }
+header nav ul { list-style: none; display: flex; gap: 20px; }
+header nav a { text-decoration: none; color: #333; font-weight: 500; transition: 0.3s; }
+header nav a:hover { color: #522418; }
+
+/* ----- SLIDER ----- */
+/* espaço para o header fixo */
+.slider { margin-top: 1px; position: relative; overflow: hidden; max-height: 500px; }
+
+/* contêiner das imagens: altura fixa para o slider */
+.slides {
+  position: relative;       /* necessário para posicionar .slide absolute dentro */
+  height: 500px;
+}
+
+/* cada slide fica empilhado (absolute) e ocupa 100% do contêiner */
+.slide {
+  position: absolute;
+  inset: 0;                 /* top:0; right:0; bottom:0; left:0; */
+  opacity: 0;               /* invisível por padrão */
+  transition: opacity 0.6s ease;
+  display: flex;
+  align-items: flex-end;    /* legenda alinhada ao rodapé */
+}
+
+/* o slide visível */
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* imagem cobre todo o slide */
+.slide img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  display: block;
+}
+
+/* legenda sobre a imagem */
+.caption {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.8);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1.2em;
+  color: #392722;
+  z-index: 3;
+}
+
+/* botões de navegação */
+.navigation { position: absolute; inset: 0; pointer-events: none; }
+.navigation button {
+  pointer-events: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.6em;
+  background: rgba(0,0,0,0.35);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  z-index: 4;
+}
+.navigation .prev { left: 20px; }
+.navigation .next { right: 20px; }
+.navigation button:focus { outline: 2px solid #fff; }
+
+/* ----- PRODUTOS ----- */
+.produtos { text-align: center; padding: 60px 20px; }
+.produtos h2 { font-size: 2em; margin-bottom: 30px; color: #522418; }
+
+/* Grid responsivo */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Card de produto */
+.card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.card img { width: 100%; height: 200px; object-fit: cover; }
+.card h3 { margin: 15px 0; color: #522418; }
+.card p { padding: 0 15px 20px; }
+.card:hover { transform: scale(1.05); }
+
+/* ----- FOOTER & FORM ----- */
+footer {
+  background: #522418;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+footer h2 { margin-bottom: 20px; }
+
+.form-contato {
+  display: flex; flex-direction: column;
+  max-width: 400px; margin: 0 auto 30px; gap: 15px;
+}
+.form-contato input,
+.form-contato textarea {
+  padding: 10px; border-radius: 8px; border: none; font-size: 1em;
+}
+.form-contato button {
+  background: white; color: #522418; border: none; padding: 12px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: 0.3s;
+}
+.form-contato button:hover { background: #f8d7da; }
+
+.redes-sociais {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.redes-sociais a img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.redes-sociais a:hover img {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}
+
+
+/* Responsividade: slider menor em telas pequenas */
+@media (max-width: 600px) {
+  .slides { height: 300px; }
+  .slide img { height: 300px; }
+  .caption { font-size: 1em; padding: 8px 12px; }
+}

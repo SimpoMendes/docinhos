@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imperio Doces</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Header fixo -->
+    <header>
+        <div class="logo">🍬 Império Doces</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#produtos">Docinhos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Slider de destaque -->
+    <section class="slider" id="home" aria-label="Slider de destaque">
+        <div class="slides">
+            <!-- Cada .slide ocupa toda a área e será mostrado/ocultado via opacity -->
+            <div class="slide active">
+                <img src="img/docinho1.jpg" alt="Docinhos deliciosos">
+                <div class="caption">Docinhos para todas as festas!</div>
+            </div>
+
+            <div class="slide">
+                <img src="img/docinho5.jpg" alt="Brigadeiros gourmet">
+                <div class="caption">Sabor que encanta!</div>
+            </div>
+
+            <div class="slide">
+                <img src="img/docinho6.png" alt="Doces personalizados">
+                <div class="caption">Feitos com carinho ❤</div>
+            </div>
+        </div>
+
+        <!-- Botões de navegação do slider -->
+        <div class="navigation" aria-hidden="false">
+            <button class="prev" aria-label="Anterior">&#10094;</button>
+            <button class="next" aria-label="Próximo">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Seção de Produtos -->
+    <section id="produtos" class="produtos">
+        <h2>Nossos Docinhos</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="img/docinho4.jpg" alt="Brigadeiro">
+                <h3>Irresistível</h3>
+                <p>Clássico e irresistível.</p>
+            </div>
+            <div class="card">
+                <img src="img/docinho2.jpg" alt="Beijinho">
+                <h3>Delicado</h3>
+                <p>Doce e delicado.</p>
+            </div>
+            <div class="card">
+                <img src="img/docinho3.jpg" alt="Cajuzinho">
+                <h3>Tradicional</h3>
+                <p>Tradicional das festas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <footer id="contato">
+        <h2>Entre em Contato</h2>
+
+        <!-- Formulário -->
+        <form class="form-contato" action="https://formcarry.com/s/iSQDIsbTRcx" method="POST" accept-charset="UTF-8">
+            <input type="text" name="nome" placeholder="Seu nome" required>
+            <input type="email" name="email" placeholder="Seu e-mail" required>
+            <textarea name="mensagem" placeholder="Sua mensagem"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <p>📞 (11) 96709-1290 | ✉ imperiodoces@gmail.com</p>
+
+        <div class="redes-sociais">
+    <a href="https://www.facebook.com/sergiosimpo" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+      <img src="img/facebook.svg" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com/imperio_doces" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <img src="img/Instagram.png" alt="Instagram">
+    </a>
+    <a href="https://wa.me/5511967091290?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20quanto%20custa%20o%20cento%20dos%20doces%3F" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+      <img src="img/whatsaap.png" alt="WhatsApp">
+    </a>
+  </div>
+        <p>© 2025 Império Doces - Todos os direitos reservados</p>
+    </footer>
+
+    <!-- Script JS no final garante que o DOM já exista; o código também usa DOMContentLoaded por segurança -->
+    <script src="script.js"></script>
+</body>
+
+</html>
