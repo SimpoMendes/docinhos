@@ -47,9 +47,10 @@
 │ └─ whatsapp.png
 └─ README.md # Este arquivo
 
-![Banner do projeto](img/siteimperio.png)
+
 
 ---
+![Banner do projeto](img/siteimperio.png)
 
 ## 🚀 Como usar
 
