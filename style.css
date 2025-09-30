@@ -68,7 +68,7 @@ header nav a:hover { color: #522418; }
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(255,255,255,0.8);
+  background: rgba(255, 255, 255, 0.8);
   padding: 10px 20px;
   border-radius: 20px;
   font-size: 1.2em;
@@ -140,9 +140,9 @@ footer h2 { margin-bottom: 20px; }
   padding: 10px; border-radius: 8px; border: none; font-size: 1em;
 }
 .form-contato button {
-  background: white; color: #522418; border: none; padding: 12px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: 0.3s;
+  background: #882006; color: #f5f1f0; border: none; padding: 12px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: 0.3s;
 }
-.form-contato button:hover { background: #f8d7da; }
+.form-contato button:hover { background: #8a6649; }
 
 .redes-sociais {
   margin: 1.5rem 0;
