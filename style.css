@@ -1,5 +1,7 @@
 /* Reset básico */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; 
+font-family: "Poppins", sans-serif;
+}
 
 /* Fonte e corpo */
 body {
@@ -13,6 +15,7 @@ body {
 header {
   position: fixed;
   width: 100%;
+  height: auto;
   top: 0;
   left: 0;
   background: white;
@@ -23,10 +26,10 @@ header {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   z-index: 1000;
 }
-header .logo { font-size: 1.5em; font-weight: bold; color: #522418; }
-header nav ul { list-style: none; display: flex; gap: 20px; }
-header nav a { text-decoration: none; color: #333; font-weight: 500; transition: 0.3s; }
-header nav a:hover { color: #522418; }
+header .logo {width:auto;}
+header nav ul { font-size: 13px; list-style: none; display: flex; gap: 10px;cursor: pointer;}
+header nav a {  text-decoration: none; color: #3c160d; font-weight: 500; transition: 0.3s; }
+header nav a:hover {font-size: 15px; color: #f03405; }
 
 /* ----- SLIDER ----- */
 /* espaço para o header fixo */
@@ -99,8 +102,10 @@ header nav a:hover { color: #522418; }
 
 /* ----- PRODUTOS ----- */
 .produtos { text-align: center; padding: 60px 20px; }
-.produtos h2 { font-size: 2em; margin-bottom: 30px; color: #522418; }
+.produtos h2 { font-size: 2em; margin-top: 20; margin-bottom: 30px; color: #522418; }
 
+.priceprodutos { font-size: 15px;text-align: center; padding: 60px 20px; color:#efe5e1}
+.priceprodutos h2 { font-size: 2em; margin-bottom: 30px; color: #491405; }
 /* Grid responsivo */
 .grid {
   display: grid;
@@ -116,10 +121,34 @@ header nav a:hover { color: #522418; }
   overflow: hidden;
   transition: transform 0.3s;
 }
+
+.cardprice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(45deg, #522418, #f6b66c, rgb(240, 159, 18));
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
 .card img { width: 100%; height: 200px; object-fit: cover; }
 .card h3 { margin: 15px 0; color: #522418; }
 .card p { padding: 0 15px 20px; }
 .card:hover { transform: scale(1.05); }
+
+.cardprice img { width: 100%; height: 200px; object-fit: cover; }
+.cardprice h3 {
+  padding: 10px;
+  border-radius: 15px;  
+  background-color: #370e03;;
+  font-size: 50px; 
+  margin: 15px 0; 
+  color: #f5f1ef; }
+.cardprice p { font-size: 15px; padding: 0 15px 20px; }
+.cardprice:hover { transform: scale(1.05); }
 
 /* ----- FOOTER & FORM ----- */
 footer {
@@ -140,7 +169,7 @@ footer h2 { margin-bottom: 20px; }
   padding: 10px; border-radius: 8px; border: none; font-size: 1em;
 }
 .form-contato button {
-  background: #882006; color: #f5f1f0; border: none; padding: 12px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: 0.3s;
+  background: #f6b66c; color: #522418; border: none; padding: 12px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: 0.3s;
 }
 .form-contato button:hover { background: #8a6649; }
 
@@ -169,4 +198,8 @@ footer h2 { margin-bottom: 20px; }
   .slide img { height: 300px; }
   .caption { font-size: 0.5em; padding: 8px 12px; }
   header .logo { font-size: 0.8em; font-weight: bold; color: #522418; }
+  header nav ul {
+    list-style:none;
+    display: flex;
+}
 }
