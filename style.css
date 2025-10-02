@@ -143,11 +143,13 @@ header nav a:hover {font-size: 15px; color: #f03405; }
 .card:hover { transform: scale(1.05); }
 
 .cardprice img { width: 100%; height: 200px; object-fit: cover; }
+.cardprice h1 { font-size: 25px; color: #f5f1ef; font-weight: 500;}
 .cardprice h3 {
   padding: 10px;
   border-radius: 15px;  
   background-color: #370e03;;
-  font-size: 50px; 
+  font-size: 50px;
+  font-weight: 500; 
   margin: 15px 0; 
   color: #f5f1ef; }
 .cardprice p { font-size: 15px; padding: 0 15px 20px; }
