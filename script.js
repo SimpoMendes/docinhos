@@ -82,11 +82,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+// Aguarda até que todo o conteúdo HTML da página seja carregado
 document.addEventListener("DOMContentLoaded", () => {
+
+  // Seleciona o botão ou ícone que será usado para abrir/fechar o menu
   const toggle = document.getElementById("menu-toggle");
+
+  // Seleciona o elemento do menu que será mostrado ou escondido
   const menu = document.getElementById("menu");
 
+ // Adiciona um evento de clique ao botão de menu
   toggle.addEventListener("click", () => {
+    
+    // Alterna a classe "active" no menu
+    // Se o menu não tiver a classe, ela é adicionada (mostra o menu)
+    // Se já tiver, ela é removida (esconde o menu)
     menu.classList.toggle("active");
   });
 });
