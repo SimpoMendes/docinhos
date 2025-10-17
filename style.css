@@ -17,7 +17,7 @@ header {
   width: 100%;
   top: 0;
   left: 0;
-  background: white transparent 0.5;
+  background: rgba(255, 255, 255, .90); /* branco com 85% de opacidade */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -105,10 +105,10 @@ header nav a:hover {font-size: 15px; color: #f03405; }
 
 /* ----- PRODUTOS ----- */
 .produtos { text-align: center; padding: 60px 20px; }
-.produtos h2 { font-size: 2em; margin-top: 20; margin-bottom: 30px; color: #522418; }
+.produtos h2 { font-size: 2rem; margin-top: 60px; margin-bottom: 30px; color: #522418; }
 
-.priceprodutos { font-size: 15px;text-align: center; padding: 60px 20px; color:#efe5e1}
-.priceprodutos h2 { font-size: 2em; margin-bottom: 30px; color: #491405; }
+.priceprodutos { font-size: 15px;text-align: center;  padding: 60px 20px; color:#efe5e1}
+.priceprodutos h2 { font-size: 2rem; margin-top: 60px; margin-bottom: 30px; color: #491405; }
 /* Grid responsivo */
 .grid {
   display: grid;
@@ -163,7 +163,7 @@ footer {
   padding: 40px 20px;
   margin-top: 40px;
 }
-footer h2 { margin-bottom: 20px; }
+footer h2 { font-size: 2rem; margin-top: 80px; margin-bottom: 20px; }
 
 .form-contato {
   display: flex; flex-direction: column;
@@ -196,6 +196,13 @@ footer h2 { margin-bottom: 20px; }
   filter: brightness(1.2);
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #3c160d;
+}
+
 
 /* Responsividade: slider menor em telas pequenas */
 @media (max-width: 600px) {
@@ -208,4 +215,43 @@ footer h2 { margin-bottom: 20px; }
     list-style:none;
     display: flex;
 }
+}
+@media (max-width: 768px) {
+  /* Esconde o menu por padrão */
+  header nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    width: 200px;
+  }
+
+  /* Exibe o menu quando ativado */
+  header nav.active {
+    display: block;
+  }
+
+  /* Links do menu empilhados */
+  header nav ul {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  header nav ul li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  header nav a {
+    display: block;
+    color: #3c160d;
+  }
+
+  /* Mostra o botão hamburger */
+  .menu-toggle {
+    display: block;
+  }
 }
